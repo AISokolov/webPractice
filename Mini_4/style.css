@@ -1,0 +1,18 @@
+table, th, td {
+    border:1px solid black;
+    border-collapse: collapse;
+  }
+td{
+    height: 100px;
+    width: 100px;
+}
+#circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: red;
+    border-color: 1px solid black;
+  }
+#buttons{
+    padding: 10px;
+}

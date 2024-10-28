@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cards</title>
+        <style>
+            .card {
+                width: 100px;
+            }
+        </style>
+    
+    </head>
+    <script>
+        function draw() {
+            let cover = ["clubs", "diamonds", "hearts", "spades"];
+            let rank = ["ace", "king", "jack", "queen"];
+            let cells = ["cell1", "cell2", "cell3", "cell4", "cell5"];
+            let deck = [];
+
+            for (var i=1; i<=5; i++){
+                let cell = document.getElementById("cell"+i);
+                cell.innerHTML = "";
+                let card;
+                do {
+                    let numbers = Math.floor(Math.random() * 9) + 2;
+                    let coverRand = Math.floor(Math.random() * 4);
+                    let rankRand = Math.floor(Math.random() * 4);
+                    let rand = Math.floor(Math.random() * 2);
+                    if (rand == 1) {
+                        card = numbers + "_of_" + cover[coverRand] + ".png";
+                    } else {
+                        card = rank[rankRand] + "_of_" + cover[coverRand] + ".png";
+                    }
+                } while (deck.includes(card));
+
+                let img = document.createElement("img");
+                img.src = card;
+                deck.push(card);
+                img.className = "card";
+                cell.appendChild(img);
+            }
+        }
+        function cardOver(event,id){
+            event.preventDefault();
+        }
+        let draggedId = null;
+        function dragCard(event, idNo){
+            draggedId = idNo;
+        }
+        function cardDrop(event,id){
+            event.preventDefault();
+            var draggedCell = document.getElementById("cell"+draggedId);
+            var dropCell = document.getElementById("cell"+id);
+            var draggedCard = draggedCell.children[0];
+            var droppedCard = dropCell.children[0];
+            if (draggedCard && droppedCard) {
+                draggedCell.removeChild(draggedCard);
+                dropCell.removeChild(droppedCard);
+                draggedCell.appendChild(droppedCard);
+                dropCell.appendChild(draggedCard);
+            }
+        }
+    </script>
+    <body>
+        <table>
+            <tr>
+                <td id="cell1" ondragover="cardOver(event,1)" ondrop="cardDrop(event, 1)"><img class="card" src="2_of_diamonds.png" draggable="true" ondrag="dragCard(event,1)"></td>
+                <td id="cell2" ondragover="cardOver(event,2)" ondrop="cardDrop(event, 2)"><img class="card" src="3_of_diamonds.png" draggable="true" ondrag="dragCard(event,2)"></td>
+                <td id="cell3" ondragover="cardOver(event,3)" ondrop="cardDrop(event, 3)"><img class="card" src="4_of_diamonds.png" draggable="true" ondrag="dragCard(event,3)"></td>
+                <td id="cell4" ondragover="cardOver(event,4)" ondrop="cardDrop(event, 4)"><img class="card" src="5_of_diamonds.png" draggable="true" ondrag="dragCard(event,4)"></td>
+                <td id="cell5" ondragover="cardOver(event,5)" ondrop="cardDrop(event, 5)"><img class="card" src="6_of_diamonds.png" draggable="true" ondrag="dragCard(event,5)"></td>
+            </tr>
+        </table>
+        <button onclick="draw()">Draw</button>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square{
+    width: 300px;
+    height: 300px;
+    border: 2px solid white;
+    margin-top: 250px;
+    overflow: hidden;
+}
+
+.green{
+    width: 30%;
+    height: 20%;
+    float: left;
+    background-color: greenyellow;
+    margin-right: 15px;
+    position: relative;
+    animation: mymove 7s infinite;
+}
+
+.red{
+    width: 30%;
+    height: 20%;
+    float: left;
+    background-color: red;
+    margin-right: 15px;
+    position: relative;
+    animation: mymove 7s infinite;
+}
+
+.blue{
+    width: 30%;
+    height: 20%;
+    float: left;
+    background-color: blue;
+    position: relative;
+    animation: mymove 7s infinite;
+}
+
+.semicircle{
+    width: 100%;
+    height: 75%;
+    margin-top: 60px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    position: relative;
+    animation: mymove_2 7s infinite;
+}
+
+
+@keyframes mymove{
+    from {top: 0px;}
+    to {top: 300px;}
+}
+
+@keyframes mymove_2 {
+        0%{background-color: black}
+        30%{background-color: orange}
+        30%{background-color: orange}
+        60%{background-color: black}
+}
+

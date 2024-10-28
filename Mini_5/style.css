@@ -1,0 +1,43 @@
+#input{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+#main{
+    border:3px solid black;
+	background-color:rgba(255,0,0,0.75);
+	width: 50em;
+	height: 25em;
+	position:relative;
+	margin: auto;
+	margin-top:2em;
+	margin-bottom:4.5em;
+}
+
+#circle{
+    border: 0.1em solid black;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	position: absolute;
+}
+
+#warning{
+	justify-content: center;
+    align-items: center;
+    position: relative;
+	color: red;
+	display: none;
+}
+h1{
+	justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+body{
+	justify-content: center;
+    align-items: center;
+}

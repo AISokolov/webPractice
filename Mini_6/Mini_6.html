@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+  .mydiv {
+    float: left;
+    width: 200px;
+    height: 400px;
+    border: 10px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+  }
+  .square {
+    width: 120px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px;
+    border: 3px dotted white;
+  }
+
+  .square:hover {
+    width: 140px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.3)!important;
+  }
+  #head1 {
+    width: 150px;
+    height: 25px;
+    background-color: red;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px;
+    
+  }
+
+  #head2 {
+    width: 150px;
+    height: 25px;
+    background-color: orange;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  #head3 {
+    width: 150px;
+    height: 25px;
+    background-color: green;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px;
+  }
+  </style>
+</head>
+<script>
+  let id;
+function drag(event, idNo){
+    id = idNo;
+  }
+
+function allowDrop(event){
+    event.preventDefault();
+  }
+
+function drop(event){
+    event.preventDefault();
+    var draggedSquare = document.getElementById(id);
+    if (event.target.id == "inProgress"){
+          draggedSquare.style.backgroundColor = "#ffcc54";
+          draggedSquare.innerHTML= "Task "+ draggedSquare.id + " is in progress";
+      }else {
+          draggedSquare.style.backgroundColor = "#89fa8d";
+          draggedSquare.innerHTML= "Task "+ draggedSquare.id + " is done";
+      }
+    event.target.appendChild(draggedSquare);
+}
+</script>
+<body>
+
+  <div class="mydiv"> <!-- Cannot drop back to "To DO"-->
+    <div id="head1">To Do</div>
+    <div class="square" id="1" draggable="true" ondragstart="drag(event, 1)">Task 1</div>
+    <div class="square" id="2" draggable="true" ondragstart="drag(event, 2)">Task 2</div>
+    <div class="square" id="3" draggable="true" ondragstart="drag(event, 3)">Task 3</div>
+    <div class="square" id="4" draggable="true" ondragstart="drag(event, 4)">Task 4</div>
+    <div class="square" id="5" draggable="true" ondragstart="drag(event, 5)">Task 5</div>
+  </div>
+  <div class="mydiv" id="inProgress" ondragover="allowDrop(event)" ondrop="drop(event)">
+    <div id="head2">In Progress</div>
+  </div>
+  <div class="mydiv" id="done" ondragover="allowDrop(event)" ondrop="drop(event)">
+    <div id="head3">Done</div>
+  </div>
+
+</body>
+</html>
+

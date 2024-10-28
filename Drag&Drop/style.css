@@ -1,0 +1,23 @@
+table tr, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td{
+    height: 100px;
+    width: 100px;
+}
+
+div{
+    border-radius: 20%;
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 50px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

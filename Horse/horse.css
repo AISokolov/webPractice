@@ -1,0 +1,51 @@
+
+.horse{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.horse1{
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: animation1 2s linear infinite;
+}
+
+.horse2{
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: animation2 2s linear infinite;
+}
+
+.horse3{
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: animation3 2s linear infinite;
+}
+
+@keyframes animation1 {
+    0% { opacity: 0; top: 0px; left: 0px;}
+    50% { opacity: 1; top: 50px; left: 100px;}
+    100% { opacity: 0;top: 100px; left: 200px;}
+}
+
+@keyframes animation2 {
+    0% { opacity: 0; top: 100px; left:180px;}
+    50% { opacity: 1; top: 75px; left: 300px; }
+    100% { opacity: 0; top: 50px; left: 400px; }
+}
+
+@keyframes animation3 {
+    0% { opacity: 0; top: 50px; left: 400px;  }
+    50% { opacity: 1; top: 25px; left: 500px;}
+    100% {  opacity: 0; top: 0px; left: 600px; }
+}
+
+
+

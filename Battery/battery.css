@@ -1,0 +1,27 @@
+
+.battery{
+    width: 300px;
+    height: 100px;
+    border: 3px solid black;
+    float: left;
+}
+
+.head{
+    float: left;
+    width: 20px;
+    height: 40px;
+    margin-top: 30px;
+    position: relative;
+    border-radius: 0% 50% 50% 0%;
+    background-color: black;
+}
+.charge{
+    width: 0px;
+    height: 100px;
+    animation: myAni 10s linear infinite reverse;
+}
+
+@keyframes myAni{
+    0% {width: 0%; background-color: red}
+    100%{width: 100%; background-color: greenyellow}
+ }
